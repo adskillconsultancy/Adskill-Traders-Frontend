@@ -1,71 +1,73 @@
-export interface ServiceItem {
+export interface ProductServiceItem {
   id: string;
   title: string;
+  category: string;
   description: string;
-  icon: string;
-  link?: string;
-  features?: string[];
+  features: string[];
 }
 
-export const services: ServiceItem[] = [
+export const exportCategories: ProductServiceItem[] = [
   {
-    id: "global-import-export",
-    title: "Global Import & Export",
+    id: "apparel-clothing-export",
+    title: "RMG & Apparel Export",
+    category: "Clothing & Garments",
     description:
-      "Comprehensive cross-border import and export trade operations connecting worldwide manufacturers and verified wholesale buyers.",
-    icon: "Globe",
+      "Direct B2B wholesale export of premium knitwear, denim, activewear, and woven apparel from certified manufacturers in Bangladesh to USA retailers and global brands.",
     features: [
-      "Customs Clearance & Documentation",
-      "Multimodal Freight Coordination",
-      "Global Trade Compliance",
+      "Custom OEM & Private Label Production",
+      "US FDA / Consumer Safety Compliant",
+      "Bulk Wholesale Order Fulfillment",
     ],
   },
   {
-    id: "bulk-commodity-trading",
-    title: "Bulk Commodity Trading",
+    id: "fashion-jewelry-accessories",
+    title: "Fine & Fashion Jewellery",
+    category: "Jewellery & Ornaments",
     description:
-      "Reliable sourcing and distribution of essential agro, industrial, consumer, and energy commodities with verified quality standards.",
-    icon: "PackageCheck",
+      "Artisan handcrafted and contemporary fashion jewelry, gold-plated ornaments, brass, and gemstone accessories sourced for American boutiques and distributors.",
     features: [
-      "Wholesale Agricultural Goods",
-      "Industrial Raw Materials",
-      "Certified Quality Assurance",
+      "High-Precision Craftsmanship",
+      "Hypoallergenic & Lead/Nickel Free",
+      "Bespoke Packaging for US Brands",
     ],
   },
   {
-    id: "supply-chain-logistics",
-    title: "Supply Chain & Logistics",
+    id: "footwear-leather-export",
+    title: "Footwear & Leather Goods",
+    category: "Shoes & Footwear",
     description:
-      "End-to-end supply chain management, cargo shipping tracking, warehousing solutions, and safe door-to-door freight distribution.",
-    icon: "Truck",
+      "Sustainable leather footwear, casual sneakers, formal dress shoes, and handmade leather bags tailored for North American retail standards.",
     features: [
-      "Ocean & Air Freight Management",
-      "Secure Warehousing & Inventory",
-      "Real-time Shipment Tracking",
+      "Genuine Leather & Eco-friendly Soles",
+      "Strict Quality Control & Durability",
+      "Duty-Efficient US Customs Clearing",
     ],
   },
   {
-    id: "wholesale-product-sourcing",
-    title: "Wholesale Product Sourcing",
+    id: "lifestyle-fashion-accessories",
+    title: "Lifestyle & Fashion Items",
+    category: "Fashion Accessories",
     description:
-      "Direct procurement from certified global factories, contract negotiation, vendor verification, and rigorous quality inspection.",
-    icon: "Building2",
+      "Trendy seasonal fashion items including scarves, bags, headwear, and artisanal textiles designed for global fast-fashion brands and department stores.",
     features: [
-      "Direct Factory Sourcing",
-      "Pre-shipment Inspection",
-      "Bespoke Trade Contracts",
+      "Seasonal Trend Forecasting",
+      "Eco-friendly Certified Fabrics",
+      "Fast Air & Ocean Cargo Turnaround",
     ],
   },
   {
-    id: "trade-finance-consultancy",
-    title: "Trade Finance & Advisory",
+    id: "cross-border-trade-logistics",
+    title: "BD to USA Trade & Logistics",
+    category: "Export & Trade Clearance",
     description:
-      "Strategic trade advisory, Letter of Credit (LC) guidance, foreign exchange risk mitigation, and commercial trade compliance.",
-    icon: "TrendingUp",
+      "End-to-end export corridor solutions between Bangladesh manufacturing hubs and major USA distribution ports (New York, Los Angeles, Savannah).",
     features: [
-      "Letter of Credit (LC) Consulting",
-      "Market Intelligence & Research",
-      "Customs Tariff Advisory",
+      "Door-to-Door Container Freight",
+      "US Customs Tariffs & LC Management",
+      "Pre-shipment Inspection (AQL 2.5)",
     ],
   },
 ];
+
+// Alias for compatibility across existing components
+export const services = exportCategories;

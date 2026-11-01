@@ -19,27 +19,29 @@ import {
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   {
-    label: "Services",
-    href: "/services",
+    label: "Export Products",
+    href: "/products",
     children: [
-      { label: "All Services", href: "/services" },
-      ...services.map((s) => ({
-        label: s.title,
-        href: s.link || `/services/${s.id}`,
-      })),
+      { label: "All Export Categories", href: "/products" },
+      { label: "Apparel & Clothing", href: "/products/apparel-clothing-export" },
+      { label: "Fashion & Fine Jewellery", href: "/products/fashion-jewelry-accessories" },
+      { label: "Footwear & Shoes", href: "/products/footwear-leather-export" },
+      { label: "Fashion & Lifestyle Goods", href: "/products/lifestyle-fashion-accessories" },
+      { label: "BD to USA Trade Solutions", href: "/products/cross-border-trade-logistics" },
     ],
   },
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
     children: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Team", href: "/about/team" },
+      { label: "Who We Are", href: "/about" },
+      { label: "Our Global Network", href: "/about/network" },
+      { label: "Quality Assurance", href: "/about/quality" },
     ],
   },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "Sourcing & Trade", href: "/sourcing" },
+  { label: "BD-USA Trade Hub", href: "/trade-hub" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -181,7 +183,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4 text-gray-300">
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                Global Trade, Export-Import & Commodity Sourcing
+                Bangladesh to USA Direct Export Corridor: Clothing, Jewellery, Shoes & Fashion
               </span>
             </div>
           </div>

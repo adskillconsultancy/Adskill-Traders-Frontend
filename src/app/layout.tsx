@@ -12,11 +12,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "AdSkill Traders — Global Trading, Sourcing & Commodity Solutions",
+    default: "AdSkill Traders — Bangladesh to USA Wholesale Export House",
     template: "%s | AdSkill Traders",
   },
   description:
-    "Empowering global trade, export-import logistics, wholesale commodity supply, and high-efficiency market sourcing.",
+    "Direct B2B export house connecting Bangladesh manufacturing to USA buyers for clothing, jewellery, footwear, and fashion accessories.",
   icons: {
     icon: [
       { url: "/favicon.ico" },

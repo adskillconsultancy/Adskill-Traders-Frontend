@@ -57,7 +57,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-gray-300">
-              Delivering high-reliability global trade management, international commodity trading, and supply chain solutions.
+              Premier Bangladesh to USA export house delivering wholesale clothing, jewellery, footwear, and fashion goods with factory-direct sourcing.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -84,51 +84,51 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Solutions Links */}
+          {/* Export Product Categories */}
           <div>
             <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand-primary" />
-              Solutions
+              Export Lines
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/services/global-import-export"
+                  href="/products/apparel-clothing-export"
                   className="hover:text-brand-primary hover:translate-x-1 transition-all inline-block"
                 >
-                  Global Import & Export
+                  Apparel & Clothing
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/bulk-commodity-trading"
+                  href="/products/fashion-jewelry-accessories"
                   className="hover:text-brand-primary hover:translate-x-1 transition-all inline-block"
                 >
-                  Bulk Commodity Trading
+                  Fashion & Fine Jewellery
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/supply-chain-logistics"
+                  href="/products/footwear-leather-export"
                   className="hover:text-brand-primary hover:translate-x-1 transition-all inline-block"
                 >
-                  Supply Chain & Logistics
+                  Footwear & Shoes
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/wholesale-product-sourcing"
+                  href="/products/lifestyle-fashion-accessories"
                   className="hover:text-brand-primary hover:translate-x-1 transition-all inline-block"
                 >
-                  Wholesale Product Sourcing
+                  Fashion & Lifestyle Goods
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/trade-finance-consultancy"
+                  href="/products/cross-border-trade-logistics"
                   className="hover:text-brand-primary hover:translate-x-1 transition-all inline-block"
                 >
-                  Trade Finance & Advisory
+                  BD to USA Trade Corridor
                 </Link>
               </li>
             </ul>
