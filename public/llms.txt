@@ -1,0 +1,18 @@
+# AdSkill Technology Inc.
+
+> Leading software engineering and AI technology firm providing enterprise custom software development, agentic AI workflows, cloud infrastructure, and digital transformation solutions.
+
+## About
+
+AdSkill Technology Inc. designs, builds, and deploys high-performance software systems and automated AI solutions for modern businesses and enterprises.
+
+- **Email**: info@adskilltech.com
+- **Website**: https://adskilltech.com
+- **Location**: New York, NY, USA
+
+## Core Capabilities
+
+- **Custom Software Development**: High-performance web and mobile platforms built with Next.js, React, TypeScript, and modern cloud stacks.
+- **AI & Automation Solutions**: Enterprise AI agent workflows, LLM integration, robotic process automations, and intelligent document systems.
+- **Cloud Infrastructure & DevOps**: High-availability cloud architectures, Kubernetes/Docker microservices, CI/CD pipelines, and 99.9% uptime reliability.
+- **UI/UX & Product Design**: Modern user interface systems, design kits, and conversion-optimized enterprise portals.
