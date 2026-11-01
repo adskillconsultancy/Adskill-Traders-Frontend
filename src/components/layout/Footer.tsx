@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/adskilltraders-white.svg"
+                src="/adskilltraders-white.png"
                 alt="AdSkill Traders"
                 width={240}
                 height={60}

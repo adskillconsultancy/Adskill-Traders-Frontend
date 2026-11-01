@@ -64,7 +64,7 @@ export default function Navbar() {
       {/* Brand Logo */}
       <Link href="/" className="flex items-center shrink-0">
         <Image
-          src="/adskilltraders.svg"
+          src="/adskilltraders.png"
           alt="AdSkill Traders"
           width={240}
           height={60}
