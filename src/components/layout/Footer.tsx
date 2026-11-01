@@ -51,9 +51,9 @@ export default function Footer() {
               <Image
                 src="/adskilltraders-white.svg"
                 alt="AdSkill Traders"
-                width={240}
-                height={60}
-                className="h-12 w-auto object-contain"
+                width={220}
+                height={50}
+                className="h-11 sm:h-12 w-auto object-contain"
               />
             </Link>
             <p className="text-sm leading-relaxed text-gray-300">

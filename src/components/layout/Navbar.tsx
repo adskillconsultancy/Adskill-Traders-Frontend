@@ -66,9 +66,9 @@ export default function Navbar() {
         <Image
           src="/adskilltraders.svg"
           alt="AdSkill Traders"
-          width={240}
-          height={60}
-          className="h-13 sm:h-14 w-auto object-contain"
+          width={220}
+          height={50}
+          className="h-11 sm:h-12 w-auto object-contain"
           priority
         />
       </Link>
