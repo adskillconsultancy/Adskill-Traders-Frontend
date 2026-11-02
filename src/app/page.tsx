@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import TypingAnimation from "@/components/TypingAnimation";
 import FlightScrollSection from "@/components/FlightScrollSection";
+import TeamSection from "@/components/TeamSection";
 import { exportCategories } from "@/lib/services";
 
 export default function Home() {
@@ -213,6 +214,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Our Team Section */}
+      <TeamSection />
     </div>
   );
 }
