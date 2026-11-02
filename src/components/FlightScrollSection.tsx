@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowUpRight, Package, Truck, Headset } from "lucide-react";
+import { ArrowUpRight, Factory, ShieldCheck, Ship } from "lucide-react";
 
 export default function FlightScrollSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -61,44 +61,45 @@ export default function FlightScrollSection() {
     (v) => (v > 0.55 ? "auto" : "none")
   );
 
+  // Bangladesh to USA B2B Wholesale Trading & Export Advantages
   const features = [
     {
-      icon: Package,
-      title: "Real-time telematics",
-      desc: "24/7 visibility on every shipment, with instant routing updates when it matters most.",
+      icon: Factory,
+      title: "Direct BD Factory Sourcing",
+      desc: "Direct partnership with certified RMG factories, textile mills, and artisan workshops across Bangladesh without middleman markups.",
     },
     {
-      icon: Truck,
-      title: "Sustainable transport",
-      desc: "Low-emission fleet options and carbon-neutral initiatives that move progress forward.",
+      icon: ShieldCheck,
+      title: "AQL 2.5 Quality Assurance",
+      desc: "Rigorous on-site pre-shipment inspections, material testing, and strict US compliance certifications for garments, jewelry, and shoes.",
     },
     {
-      icon: Headset,
-      title: "Dedicated support",
-      desc: "A real team of logistics experts, ready around the clock to help you keep moving.",
+      icon: Ship,
+      title: "USA Port Clearance & Logistics",
+      desc: "Door-to-door ocean & air cargo dispatch from Chittagong & Dhaka straight into major USA distribution ports with full customs handling.",
     },
   ];
 
   const darkServices = [
     {
-      title: "Land Freight",
-      desc: "Integrated transport and logistics solutions keeping goods moving reliably from origin to destination.",
-      img: "https://cdn.prod.website-files.com/6a6fdd074132cd686605e2dc/6a9931aef087086729e86e03_Gemini_Generated_Image_xwnsjuxwnsjuxwns.avif",
+      title: "RMG & Apparel Export",
+      desc: "Knitwear, denim, activewear, and woven apparel tailored for US retail brands and department chains.",
+      img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop",
     },
     {
-      title: "Air Freight",
-      desc: "Fast, reliable air cargo networks designed for time-sensitive global shipments.",
-      img: "https://cdn.prod.website-files.com/6a6fdd074132cd686605e2dc/6a9930cf1c0b70c10dbe2794_markus-winkler-V0WETbEXG5Y-unsplash.avif",
+      title: "Fashion & Fine Jewellery",
+      desc: "Artisan-crafted brass, gold-plated, and gemstone fashion jewelry with lead and nickel-free certifications.",
+      img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop",
     },
     {
-      title: "Ocean Freight",
-      desc: "Comprehensive container shipping solutions spanning primary sea routes between Bangladesh and the USA.",
-      img: "https://cdn.prod.website-files.com/6a6fdd074132cd686605e2dc/6a99317d2130131dc9d4c3d0_ocean%20freight.avif",
+      title: "Footwear & Leather Goods",
+      desc: "Genuine leather shoes, casual sneakers, and handcrafted bags engineered for American retail durability.",
+      img: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop",
     },
     {
-      title: "Warehousing",
-      desc: "Secure storage facilities and smart inventory fulfillment located at key regional logistics hubs.",
-      img: "https://cdn.prod.website-files.com/6a6fdd074132cd686605e2dc/6aa7a515c7138d528e28f2b5_Organized%20Warehouse%20with%20Forklift.webp",
+      title: "Cross-Border Trade Logistics",
+      desc: "FCL/LCL ocean freight, time-critical air shipments, and automated US Customs tariff clearances.",
+      img: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop",
     },
   ];
 
@@ -123,10 +124,10 @@ export default function FlightScrollSection() {
               THE ADSKILL DIFFERENCE
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#191919] tracking-tight max-w-4xl leading-[1.1]">
-              Innovative logistics solutions
+              Bangladesh to USA Direct Export Hub
             </h2>
             <p className="mt-4 text-base text-[#616161] max-w-3xl font-normal leading-relaxed">
-              We combine human expertise with intelligent technology to make global trade feel remarkably simple.
+              We connect certified Bangladesh apparel mills, jewelry artisans, and footwear manufacturers directly with USA retail chains, distributors, and private brands.
             </p>
           </div>
 
@@ -219,7 +220,7 @@ export default function FlightScrollSection() {
                 <div className="relative w-full aspect-[1176/864]">
                   <Image
                     src="/galvoria-airplane.png"
-                    alt="Commercial Airplane"
+                    alt="Commercial Cargo Airplane"
                     fill
                     className="animate-img object-contain"
                     priority
@@ -248,18 +249,18 @@ export default function FlightScrollSection() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-brand-primary uppercase mb-4">
                 <span className="text-brand-primary">✦</span>
-                WHAT ADSKILL DOES
+                WHAT ADSKILL EXPORTS
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-white tracking-tight leading-[1.1]">
-                Designed to move what matters
+                Sourcing Premium Bangladeshi Goods
               </h2>
             </div>
 
             <Link
-              href="/services"
+              href="/products"
               className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white hover:text-brand-dark text-white text-sm font-semibold border border-white/20 transition-all duration-300 w-fit shrink-0 group"
             >
-              <span>More Services</span>
+              <span>All Export Lines</span>
               <div className="w-6 h-6 rounded-full bg-brand-primary text-white flex items-center justify-center group-hover:bg-brand-dark transition-colors">
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
@@ -269,8 +270,9 @@ export default function FlightScrollSection() {
           {/* Services Cards Grid */}
           <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {darkServices.map((service, i) => (
-              <div
+              <Link
                 key={i}
+                href="/products"
                 className="group relative flex flex-col justify-between min-h-[380px] p-2 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
               >
                 <div>
@@ -295,7 +297,7 @@ export default function FlightScrollSection() {
                     {service.desc}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </motion.div>
