@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "@/lib/services";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   ChevronDown,
@@ -14,6 +14,7 @@ import {
   Mail,
   MapPin,
   ArrowRight,
+  Search,
 } from "lucide-react";
 
 const NAV_LINKS = [
@@ -48,6 +49,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isSticky, setIsSticky] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,53 +78,68 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Navigation */}
-      <ul className="hidden lg:flex items-center gap-1" role="list">
-        {NAV_LINKS.map((link) => (
-          <li key={link.label} className="relative group">
-            {link.children ? (
-              <>
-                <div
-                  className="group/btn flex items-center gap-1.5 px-4 py-6 text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors cursor-pointer relative"
-                  aria-haspopup="true"
+      <ul className="hidden lg:flex items-center h-full" role="list">
+        {NAV_LINKS.map((link) => {
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
+
+          return (
+            <li key={link.label} className="relative group h-full flex items-center">
+              {link.children ? (
+                <>
+                  <div
+                    className={cn(
+                      "group/btn flex items-center gap-1.5 px-4 h-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer relative select-none",
+                      isActive
+                        ? "bg-[#141414] text-white shadow-md z-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%-12px),50%_100%,0_calc(100%-12px))] pb-3 pt-3"
+                        : "text-gray-800 hover:text-brand-dark hover:bg-[#F3EFE6] hover:[clip-path:polygon(0_0,100%_0,100%_calc(100%-12px),50%_100%,0_calc(100%-12px))] hover:pb-3 hover:pt-3"
+                    )}
+                    aria-haspopup="true"
+                  >
+                    <span>{link.label}</span>
+                    <ChevronDown
+                      size={13}
+                      className="transition-transform group-hover/btn:rotate-180 opacity-70"
+                    />
+                  </div>
+                  <div className="absolute left-0 top-[calc(100%+2px)] pt-1 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                    <div className="w-68 p-2 bg-white rounded-xl shadow-xl border border-gray-100 flex flex-col gap-1">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          className="group/item flex items-center justify-between px-3.5 py-2.5 text-xs font-medium text-gray-700 hover:text-brand-dark hover:bg-brand-primary/10 rounded-lg transition-all"
+                        >
+                          <span className="group-hover/item:translate-x-1 transition-transform">
+                            {child.label}
+                          </span>
+                          <ChevronRight
+                            size={14}
+                            className="opacity-0 group-hover/item:opacity-100 transition-opacity text-brand-primary"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "group/link flex items-center px-4 h-full text-xs font-bold uppercase tracking-wider transition-all duration-200 relative select-none",
+                    isActive
+                      ? "bg-[#141414] text-white shadow-md z-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%-12px),50%_100%,0_calc(100%-12px))] pb-3 pt-3"
+                      : "text-gray-800 hover:text-brand-dark hover:bg-[#F3EFE6] hover:[clip-path:polygon(0_0,100%_0,100%_calc(100%-12px),50%_100%,0_calc(100%-12px))] hover:pb-3 hover:pt-3"
+                  )}
                 >
                   {link.label}
-                  <ChevronDown
-                    size={14}
-                    className="transition-transform group-hover/btn:rotate-180"
-                  />
-                  <span className="absolute left-4 right-4 bottom-4 h-0.5 bg-brand-primary scale-x-0 origin-left transition-transform duration-300 group-hover/btn:scale-x-100" />
-                </div>
-                <div className="absolute left-0 top-full pt-1 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                  <div className="w-68 p-2 bg-white rounded-xl shadow-xl border border-gray-100 flex flex-col gap-1">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
-                        className="group/item flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-gray-700 hover:text-brand-dark hover:bg-brand-primary/10 rounded-lg transition-all"
-                      >
-                        <span className="group-hover/item:translate-x-1 transition-transform">
-                          {child.label}
-                        </span>
-                        <ChevronRight
-                          size={14}
-                          className="opacity-0 group-hover/item:opacity-100 transition-opacity text-brand-primary"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </>
-            ) : (
-              <Link
-                href={link.href}
-                className="group/link block px-4 py-6 text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors relative"
-              >
-                {link.label}
-                <span className="absolute left-4 right-4 bottom-4 h-0.5 bg-brand-primary scale-x-0 origin-left transition-transform duration-300 group-hover/link:scale-x-100" />
-              </Link>
-            )}
-          </li>
-        ))}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
       {/* Right Action CTA & Phone */}
