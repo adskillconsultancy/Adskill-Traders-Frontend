@@ -89,7 +89,7 @@ export default function FlightScrollSection() {
     {
       title: "Fashion & Fine Jewellery",
       desc: "Artisan-crafted brass, gold-plated, and gemstone fashion jewelry with lead and nickel-free certifications.",
-      img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop",
+      img: "/jewellery-export.jpg",
     },
     {
       title: "Footwear & Leather Goods",
@@ -99,7 +99,7 @@ export default function FlightScrollSection() {
     {
       title: "Cross-Border Trade Logistics",
       desc: "FCL/LCL ocean freight, time-critical air shipments, and automated US Customs tariff clearances.",
-      img: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop",
+      img: "/logistics-trade.jpg",
     },
   ];
 
