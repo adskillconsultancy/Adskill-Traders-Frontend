@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import TypingAnimation from "@/components/TypingAnimation";
 import FlightScrollSection from "@/components/FlightScrollSection";
+import ExportSnapshotSection from "@/components/ExportSnapshotSection";
 import TeamSection from "@/components/TeamSection";
 import { exportCategories } from "@/lib/services";
 
@@ -176,6 +177,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Export Product Snapshot (Modern Clean Trade Categories) */}
+      <ExportSnapshotSection />
 
       {/* USA-BD Trade Corridor Pillars */}
       <section className="py-20 bg-[#001b3d] text-white relative overflow-hidden">
