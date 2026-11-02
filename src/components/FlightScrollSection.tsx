@@ -39,13 +39,13 @@ export default function FlightScrollSection() {
   );
 
   // Cards entrance animation (staggered translateY & opacity)
-  const card1Y = useTransform(smoothProgress, [0.05, 0.22], ["100%", "0%"]);
+  const card1Y = useTransform(smoothProgress, [0.05, 0.22], ["80%", "0%"]);
   const card1Opacity = useTransform(smoothProgress, [0.05, 0.22], [0, 1]);
 
-  const card2Y = useTransform(smoothProgress, [0.08, 0.26], ["100%", "0%"]);
+  const card2Y = useTransform(smoothProgress, [0.08, 0.26], ["80%", "0%"]);
   const card2Opacity = useTransform(smoothProgress, [0.08, 0.26], [0, 1]);
 
-  const card3Y = useTransform(smoothProgress, [0.12, 0.30], ["100%", "0%"]);
+  const card3Y = useTransform(smoothProgress, [0.12, 0.30], ["80%", "0%"]);
   const card3Opacity = useTransform(smoothProgress, [0.12, 0.30], [0, 1]);
 
   // Dark service section fade-in matching Galvoria's exact timing
@@ -115,24 +115,24 @@ export default function FlightScrollSection() {
         {/* LAYER 1: .about-section-home (Light Tan Background & Galvoria Content)    */}
         {/* Contains the white content cards AND the airplane motion rig              */}
         {/* ========================================================================= */}
-        <div className="about-section-home absolute inset-0 w-full h-full bg-[#f3f1ec] py-[86px] px-6 sm:px-12 lg:px-24 flex flex-col justify-between pointer-events-auto z-0">
+        <div className="about-section-home absolute inset-0 w-full h-full bg-[#f3f1ec] pt-20 pb-12 lg:pt-24 lg:pb-16 px-6 sm:px-12 lg:px-24 flex flex-col justify-start pointer-events-auto z-0">
           
           {/* Header Row */}
-          <div className="max-w-[1440px] w-full mx-auto">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-brand-primary uppercase mb-4">
+          <div className="max-w-[1440px] w-full mx-auto mb-8 lg:mb-12">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-brand-primary uppercase mb-3">
               <span className="text-brand-primary">✦</span>
               THE ADSKILL DIFFERENCE
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#191919] tracking-tight max-w-4xl leading-[1.1]">
               Bangladesh to USA Direct Export Hub
             </h2>
-            <p className="mt-4 text-base text-[#616161] max-w-3xl font-normal leading-relaxed">
+            <p className="mt-3.5 text-base text-[#616161] max-w-3xl font-normal leading-relaxed">
               We connect certified Bangladesh apparel mills, jewelry artisans, and footwear manufacturers directly with USA retail chains, distributors, and private brands.
             </p>
           </div>
 
-          {/* Bottom Row: CTA Button (Left) + 3 Cards (Right) */}
-          <div className="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row items-end justify-between gap-6">
+          {/* Cards + CTA Row: Moved higher up to fill empty space naturally */}
+          <div className="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
             
             <Link
               href="/about"
@@ -144,7 +144,7 @@ export default function FlightScrollSection() {
               </div>
             </Link>
 
-            {/* 3 Cards aligned on right side */}
+            {/* 3 Cards positioned comfortably higher */}
             <div className="cards-about flex flex-col sm:flex-row gap-[22px] w-full lg:w-auto">
               {features.map((item, idx) => {
                 const IconComponent = item.icon;
@@ -242,12 +242,12 @@ export default function FlightScrollSection() {
             opacity: darkSectionOpacity,
             pointerEvents: darkSectionPointer,
           }}
-          className="service-section-home absolute inset-0 bg-[#002856] text-white py-[86px] px-6 sm:px-12 lg:px-24 flex flex-col justify-between z-20"
+          className="service-section-home absolute inset-0 bg-[#002856] text-white pt-20 pb-12 lg:pt-24 lg:pb-16 px-6 sm:px-12 lg:px-24 flex flex-col justify-start z-20"
         >
           {/* Header */}
-          <div className="max-w-[1440px] w-full mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-[1440px] w-full mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-brand-primary uppercase mb-4">
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-brand-primary uppercase mb-3">
                 <span className="text-brand-primary">✦</span>
                 WHAT ADSKILL EXPORTS
               </div>
@@ -273,11 +273,11 @@ export default function FlightScrollSection() {
               <Link
                 key={i}
                 href="/products"
-                className="group relative flex flex-col justify-between min-h-[380px] p-2 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                className="group relative flex flex-col justify-between min-h-[360px] p-2 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
               >
                 <div>
                   {/* Card Image Wrap with 12.8px radius */}
-                  <div className="img-service relative w-full h-[210px] rounded-[13px] overflow-hidden mb-6 bg-white/5 border border-white/10 shadow-lg">
+                  <div className="img-service relative w-full h-[200px] rounded-[13px] overflow-hidden mb-6 bg-white/5 border border-white/10 shadow-lg">
                     <Image
                       src={service.img}
                       alt={service.title}
