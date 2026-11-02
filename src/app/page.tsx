@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Shirt,
@@ -12,44 +13,44 @@ import {
   Globe2,
 } from "lucide-react";
 import TypingAnimation from "@/components/TypingAnimation";
+import FlightScrollSection from "@/components/FlightScrollSection";
 import { exportCategories } from "@/lib/services";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-20 lg:pt-28 lg:pb-28 bg-[#f8f9fa]">
-        {/* Subtle Background Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.22] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, #002856 1px, transparent 0)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-
-        {/* Ambient Glows */}
-        <div className="absolute top-10 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-brand-dark/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-28 text-white bg-slate-900">
+        {/* Background Image: Global Trade & Container Ship Port */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-trade.jpg"
+            alt="International Cargo Ship and Container Terminal"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          {/* Lightened overlay so the picture is bright and clearly visible */}
+          <div className="absolute inset-0 bg-slate-950/25 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-xs border border-brand-primary/30 text-brand-dark text-xs font-bold tracking-wider uppercase animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-wider uppercase shadow-lg">
               <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
               Direct Bangladesh to USA Wholesale Export House
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-extrabold text-brand-dark tracking-tight leading-[1.14]">
+            <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-extrabold text-white tracking-tight leading-[1.14] drop-shadow-md">
               Premium Export Sourcing For <br className="hidden sm:inline" />
-              <span className="text-brand-primary relative inline-block">
+              <span className="text-brand-primary relative inline-block drop-shadow-md">
                 <TypingAnimation
                   text="Fashion, Clothing & Jewellery"
                   delay={200}
                   speed={40}
                   showCursorWhenDone
                 />
-                <div className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary opacity-40">
+                <div className="absolute w-full h-3 -bottom-1 left-0 text-brand-primary opacity-60">
                   <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="w-full h-full">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                   </svg>
@@ -57,21 +58,21 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed">
-              We connect certified Bangladesh apparel factories and artisan craftsmen directly to USA retailers, boutique brands, and wholesale distributors.
+            <p className="text-lg sm:text-xl text-white/95 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
+              Connecting certified Bangladesh apparel manufacturers and artisan craft exporters directly to USA retailers, boutique brands, and wholesale distributors.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-secondary text-brand-dark font-bold shadow-lg shadow-brand-primary/20 hover:shadow-xl transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-secondary text-brand-dark font-bold shadow-lg shadow-brand-primary/30 hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
                 Request Export Catalog
                 <ArrowRight className="w-4 h-4 text-brand-dark" />
               </Link>
               <Link
                 href="/products"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-white hover:bg-gray-50 text-brand-dark font-bold border-2 border-brand-dark/20 shadow-xs transition-all hover:border-brand-dark"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold border border-white/30 backdrop-blur-md shadow-xs transition-all hover:border-white"
               >
                 View Export Lines
               </Link>
@@ -79,26 +80,29 @@ export default function Home() {
 
             {/* Metrics Grid */}
             <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-brand-primary/30 transition-all">
-                <p className="text-3xl font-extrabold text-brand-dark">100%</p>
-                <p className="text-xs font-semibold text-gray-500 mt-1">Export Compliant</p>
+              <div className="bg-slate-900/70 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-xl hover:border-brand-primary/50 transition-all">
+                <p className="text-3xl font-extrabold text-white">100%</p>
+                <p className="text-xs font-semibold text-gray-300 mt-1">Export Compliant</p>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-brand-primary/30 transition-all">
+              <div className="bg-slate-900/70 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-xl hover:border-brand-primary/50 transition-all">
                 <p className="text-3xl font-extrabold text-brand-primary">Direct</p>
-                <p className="text-xs font-semibold text-gray-500 mt-1">BD Factory Sourcing</p>
+                <p className="text-xs font-semibold text-gray-300 mt-1">BD Factory Sourcing</p>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-brand-primary/30 transition-all">
-                <p className="text-3xl font-extrabold text-brand-dark">AQL 2.5</p>
-                <p className="text-xs font-semibold text-gray-500 mt-1">Quality Inspection</p>
+              <div className="bg-slate-900/70 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-xl hover:border-brand-primary/50 transition-all">
+                <p className="text-3xl font-extrabold text-white">AQL 2.5</p>
+                <p className="text-xs font-semibold text-gray-300 mt-1">Quality Inspection</p>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-brand-primary/30 transition-all">
+              <div className="bg-slate-900/70 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-xl hover:border-brand-primary/50 transition-all">
                 <p className="text-3xl font-extrabold text-brand-primary">USA</p>
-                <p className="text-xs font-semibold text-gray-500 mt-1">Port Clearance Support</p>
+                <p className="text-xs font-semibold text-gray-300 mt-1">Port Clearance Support</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Airplane Scroll Reveal Section (Galvoria Style) */}
+      <FlightScrollSection />
 
       {/* Export Product Categories Section */}
       <section className="py-24 bg-white relative">
