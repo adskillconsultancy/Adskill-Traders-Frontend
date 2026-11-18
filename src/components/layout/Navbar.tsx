@@ -1,20 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { services } from "@/lib/services";
 import { cn } from "@/lib/utils";
 import {
+  ArrowRight,
   ChevronDown,
   ChevronRight,
-  Menu,
-  X,
-  Phone,
   Mail,
   MapPin,
-  ArrowRight,
+  Menu,
+  Phone,
+  X,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -23,11 +22,23 @@ const NAV_LINKS = [
     href: "/products",
     children: [
       { label: "All Export Categories", href: "/products" },
-      { label: "Apparel & Clothing", href: "/products/apparel-clothing-export" },
-      { label: "Fashion & Fine Jewellery", href: "/products/fashion-jewelry-accessories" },
+      {
+        label: "Apparel & Clothing",
+        href: "/products/apparel-clothing-export",
+      },
+      {
+        label: "Fashion & Fine Jewellery",
+        href: "/products/fashion-jewelry-accessories",
+      },
       { label: "Footwear & Shoes", href: "/products/footwear-leather-export" },
-      { label: "Fashion & Lifestyle Goods", href: "/products/lifestyle-fashion-accessories" },
-      { label: "BD to USA Trade Solutions", href: "/products/cross-border-trade-logistics" },
+      {
+        label: "Fashion & Lifestyle Goods",
+        href: "/products/lifestyle-fashion-accessories",
+      },
+      {
+        label: "BD to USA Trade Solutions",
+        href: "/products/cross-border-trade-logistics",
+      },
     ],
   },
   {
@@ -83,8 +94,7 @@ export default function Navbar() {
               <>
                 <div
                   className="group/btn flex items-center gap-1.5 px-4 py-6 text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors cursor-pointer relative"
-                  aria-haspopup="true"
-                >
+                  aria-haspopup="true">
                   {link.label}
                   <ChevronDown
                     size={14}
@@ -98,8 +108,7 @@ export default function Navbar() {
                       <Link
                         key={child.label}
                         href={child.href}
-                        className="group/item flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-gray-700 hover:text-brand-dark hover:bg-brand-primary/10 rounded-lg transition-all"
-                      >
+                        className="group/item flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-gray-700 hover:text-brand-dark hover:bg-brand-primary/10 rounded-lg transition-all">
                         <span className="group-hover/item:translate-x-1 transition-transform">
                           {child.label}
                         </span>
@@ -115,8 +124,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href={link.href}
-                className="group/link block px-4 py-6 text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors relative"
-              >
+                className="group/link block px-4 py-6 text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors relative">
                 {link.label}
                 <span className="absolute left-4 right-4 bottom-4 h-0.5 bg-brand-primary scale-x-0 origin-left transition-transform duration-300 group-hover/link:scale-x-100" />
               </Link>
@@ -143,8 +151,7 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-brand-dark hover:bg-brand-teal shadow-md shadow-brand-dark/15 hover:shadow-lg transition-all hover:-translate-y-0.5"
-        >
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-brand-dark hover:bg-brand-teal shadow-md shadow-brand-dark/15 hover:shadow-lg transition-all hover:-translate-y-0.5">
           Get Started
           <ArrowRight className="w-4 h-4 text-brand-primary" />
         </Link>
@@ -154,8 +161,7 @@ export default function Navbar() {
       <button
         className="lg:hidden p-2 text-gray-800 hover:text-brand-primary transition-colors"
         onClick={() => setMobileOpen((prev) => !prev)}
-        aria-label={mobileOpen ? "Close menu" : "Open menu"}
-      >
+        aria-label={mobileOpen ? "Close menu" : "Open menu"}>
         {mobileOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
     </div>
@@ -170,8 +176,7 @@ export default function Navbar() {
             <div className="flex items-center gap-6">
               <a
                 href="mailto:info@adskilltraders.com"
-                className="flex items-center gap-1.5 hover:text-brand-primary transition-colors"
-              >
+                className="flex items-center gap-1.5 hover:text-brand-primary transition-colors">
                 <Mail size={13} className="text-brand-primary" />
                 info@adskilltraders.com
               </a>
@@ -183,7 +188,8 @@ export default function Navbar() {
             <div className="flex items-center gap-4 text-gray-300">
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                Bangladesh to USA Direct Export Corridor: Clothing, Jewellery, Shoes & Fashion
+                Bangladesh to USA Direct Export Corridor: Clothing, Jewellery,
+                Shoes & Fashion
               </span>
             </div>
           </div>
@@ -201,14 +207,13 @@ export default function Navbar() {
                   <div>
                     <button
                       className="w-full flex items-center justify-between py-2 text-sm font-semibold text-gray-800"
-                      onClick={() => toggleDropdown(link.label)}
-                    >
+                      onClick={() => toggleDropdown(link.label)}>
                       {link.label}
                       <ChevronDown
                         size={14}
                         className={cn(
                           "transition-transform",
-                          openDropdown === link.label && "rotate-180"
+                          openDropdown === link.label && "rotate-180",
                         )}
                       />
                     </button>
@@ -219,8 +224,7 @@ export default function Navbar() {
                             key={child.label}
                             href={child.href}
                             className="block py-1.5 text-xs text-gray-600 hover:text-brand-primary"
-                            onClick={() => setMobileOpen(false)}
-                          >
+                            onClick={() => setMobileOpen(false)}>
                             {child.label}
                           </Link>
                         ))}
@@ -231,8 +235,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className="block py-2 text-sm font-semibold text-gray-800 hover:text-brand-primary"
-                    onClick={() => setMobileOpen(false)}
-                  >
+                    onClick={() => setMobileOpen(false)}>
                     {link.label}
                   </Link>
                 )}
@@ -242,8 +245,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="w-full flex items-center justify-center py-2.5 rounded-lg text-sm font-bold text-white bg-brand-dark hover:bg-brand-teal"
-                onClick={() => setMobileOpen(false)}
-              >
+                onClick={() => setMobileOpen(false)}>
                 Get Started
               </Link>
             </div>
@@ -255,9 +257,8 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md transition-transform duration-300 hidden lg:block",
-          isSticky ? "translate-y-0" : "-translate-y-full"
-        )}
-      >
+          isSticky ? "translate-y-0" : "-translate-y-full",
+        )}>
         <nav aria-label="Sticky Navigation">{NavContent}</nav>
       </div>
     </>
